@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ToDoItem from './toDoItem';
 export default class ToDoList extends Component {
 	render() {
-		const { items, clearList, handleDelete } = this.props;
+		const { items, clearList, handleDelete, handleEdit } = this.props;
 
 		// must PROP DRILL handleDelete method to ToDoItem must pass to component
 		return (
@@ -16,6 +16,7 @@ export default class ToDoList extends Component {
 								key={item.id}
 								title={item.title}
 								handleDelete={() => handleDelete(item.id)}
+								handleEdit={() => handleEdit(item.id)}
 							/>
 						);
 					})}
